@@ -1,17 +1,17 @@
 Summary:	Multi-session filesystem extension to libisofs, libburn
 Name:		libisoburn
-Version:	1.0.8
+Version:	1.3.2
 Release:	1
 License:	GPL v2
 Group:		Libraries
-Source0:	http://files.libburnia-project.org/releases/%{name}-%{version}.pl00.tar.gz
-# Source0-md5:	e9d4c2916f591cdf3b7248366ba54506
+Source0:	http://files.libburnia-project.org/releases/%{name}-%{version}.tar.gz
+# Source0-md5:	7ebee7c1d4e09565daddca15467035af
 Patch0:		%{name}-link.patch
 URL:		http://libburnia.pykix.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libburn-devel >= 1.0.6
-BuildRequires:	libisofs-devel >= 1.0.6
+BuildRequires:	libburn-devel >= 1.3.2
+BuildRequires:	libisofs-devel >= 1.3.2
 BuildRequires:	libtool
 BuildRequires:	pkg-config
 BuildRequires:	readline-devel
@@ -90,5 +90,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/xorrecord
 %attr(755,root,root) %{_bindir}/xorriso
 %attr(755,root,root) %{_bindir}/xorrisofs
+%{_mandir}/man1/xorrecord.1*
 %{_mandir}/man1/xorriso*.1*
 
