@@ -1,17 +1,17 @@
 Summary:	Multi-session filesystem extension to libisofs, libburn
 Name:		libisoburn
-Version:	1.3.2
+Version:	1.3.4
 Release:	1
 License:	GPL v2
 Group:		Libraries
 Source0:	http://files.libburnia-project.org/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	7ebee7c1d4e09565daddca15467035af
+# Source0-md5:	d8ebfe9407aca0d6b799706647703692
 Patch0:		%{name}-link.patch
 URL:		http://libburnia.pykix.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libburn-devel >= 1.3.2
-BuildRequires:	libisofs-devel >= 1.3.2
+BuildRequires:	libburn-devel >= 1.3.4
+BuildRequires:	libisofs-devel >= 1.3.4
 BuildRequires:	libtool
 BuildRequires:	pkg-config
 BuildRequires:	readline-devel
