@@ -1,17 +1,17 @@
 Summary:	Multi-session filesystem extension to libisofs, libburn
 Name:		libisoburn
-Version:	1.3.6
+Version:	1.3.8
 Release:	1
 License:	GPL v2
 Group:		Libraries
-Source0:	http://files.libburnia-project.org/releases/%{name}-%{version}.pl01.tar.gz
-# Source0-md5:	51f010e022b54e38a5f0c194b78c5b3a
+Source0:	http://files.libburnia-project.org/releases/%{name}-%{version}.tar.gz
+# Source0-md5:	4f1c2290a2d02bdb709c3707fd9f1ae6
 Patch0:		%{name}-link.patch
 URL:		http://libburnia.pykix.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libburn-devel >= 1.3.6
-BuildRequires:	libisofs-devel >= 1.3.6
+BuildRequires:	libburn-devel >= 1.3.8
+BuildRequires:	libisofs-devel >= 1.3.8
 BuildRequires:	libtool
 BuildRequires:	pkg-config
 BuildRequires:	readline-devel
@@ -65,6 +65,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -74,13 +76,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS COPYRIGHT README TODO
-%attr(755,root,root) %{_libdir}/libisoburn.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libisoburn.so.?
+%attr(755,root,root) %{_libdir}/libisoburn.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libisoburn.so
-%{_libdir}/libisoburn.la
 %{_includedir}/libisoburn
 %{_pkgconfigdir}/libisoburn-1.pc
 
